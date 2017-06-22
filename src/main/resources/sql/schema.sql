@@ -13,7 +13,7 @@ CREATE TABLE student (
   id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '唯一标识一名学生的ID号',
   name VARCHAR(20) COMMENT '学生的名字',
   studentID VARCHAR(20) NOT NULL DEFAULT '2014213451' UNIQUE COMMENT '学生的学号',
-  class VARCHAR(20) COMMENT '学生的专业班级',
+  class_name VARCHAR(20) COMMENT '学生的专业班级',
   department VARCHAR(20) COMMENT '学生所在学院',
   sex INT(1) NOT NULL DEFAULT 0 COMMENT '学生的性别：0表示系统默认；1表示为女；2表示为男',
   mobile_phone VARCHAR(11) COMMENT '学生的手机号',
