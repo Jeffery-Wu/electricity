@@ -15,8 +15,14 @@ public class Student {
      * 学生姓名
      */
     private String name;
-
+   
     /**
+     * 学生学号
+     */    
+    private String studentID;
+
+
+	/**
      * 学生的专业班级
      */
     private String className;
@@ -55,8 +61,19 @@ public class Student {
      * 学生信息最后一次被修改的时间
      */
     private Date updateTime;
+    /**
+     * 学生所在的宿舍ID号
+     */
+    private int dormitoryId;
+    public int getDormitoryId() {
+		return dormitoryId;
+	}
 
-    public Long getId() {
+	public void setDormitoryId(int dormitoryId) {
+		this.dormitoryId = dormitoryId;
+	}
+
+	public Long getId() {
         return id;
     }
 
@@ -71,8 +88,16 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
+   
+    public String getStudentID() {
+		return studentID;
+	}
 
-    public String getClassName() {
+	public void setStudentID(String studentID) {
+		this.studentID = studentID;
+	}
+   
+	public String getClassName() {
         return className;
     }
 
