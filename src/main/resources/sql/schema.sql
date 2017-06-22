@@ -111,6 +111,18 @@ CREATE TABLE payment (
 -- -----------------------------------------
 
 
+-- -----------------------------------------
+-- begin
+-- version:1.0.1
+-- author:huangting
+-- description:该数据库用于支撑用电管理系统
+-- time:2017/6/22
+-- -----------------------------------------
+-- 建议表
+CREATE TABLE message(
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+
+)ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT = '电费订单';
 
 
 

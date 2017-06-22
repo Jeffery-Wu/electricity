@@ -31,6 +31,7 @@ public class SwaggerConfig {
                 .contact("黄挺")
                 .version("1.0")
                 .build();
+
     }
 }
 
