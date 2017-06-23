@@ -20,4 +20,11 @@ public interface ElectricityAccountDao {
      * @return
      */
     Integer updateElectricityAccount(ElectricityAccount electricityAccount);
+    
+    /**
+     * 通过宿舍编号查找宿舍用电账户
+     * @param id
+     * @return
+     */
+    ElectricityAccount queryElectricityAccountByDormitoryId(String id);
 }
