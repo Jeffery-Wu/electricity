@@ -19,7 +19,7 @@ public interface PaymentDao {
      * @param id
      * @return
      */
-    Payment queryById(Long id);
+    Payment queryById(Integer id);
 
     /**
      * 修改订单的信息
@@ -27,4 +27,11 @@ public interface PaymentDao {
      * @return
      */
     Integer updatePayment(Payment payment);
+    
+    /**
+     * 根据id删除订单
+     * @param id
+     * @return
+     */
+    Integer deletePayment(Integer id);
 }

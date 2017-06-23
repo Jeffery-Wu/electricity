@@ -27,4 +27,11 @@ public interface ElectricityAccountDao {
      * @return
      */
     ElectricityAccount queryElectricityAccountByDormitoryId(String id);
+    
+    /**
+     * 通过账户id查询用电账户
+     * @param id
+     * @return
+     */
+    ElectricityAccount queryElectricityAccountById(Integer id);
 }

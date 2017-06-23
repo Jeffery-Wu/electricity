@@ -29,7 +29,7 @@ public interface NoticeDao {
      * @param id
      * @return
      */
-    Notice queryByIdWithContent(Long id);
+    Notice queryByIdWithContent(Integer id);
 
     /**
      * 根据管理员的ID号查询出该管理员发布的所有的通知
@@ -38,4 +38,11 @@ public interface NoticeDao {
      * @return
      */
     List<Notice> queryNoticeByMnagerId(Integer offset, Integer limit);
+    
+    /**
+     * 根据id删除通知
+     * @param id
+     * @return
+     */
+    Integer deleteNoticeById(Integer id);
 }

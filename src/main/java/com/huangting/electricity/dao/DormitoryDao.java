@@ -15,4 +15,19 @@ public interface DormitoryDao {
 	 * @return
 	 */
 	Dormitory queryDormitoryByStudentId(String id);
+	
+	/**
+	 * 根据宿舍编号查找宿舍
+	 * @param dormitoryId
+	 * @return
+	 */
+	Dormitory queryDormitoryByDormitoryId(String dormitoryId);
+	
+	/**
+	 * 根据宿舍Id查找宿舍
+	 * @param id
+	 * @return
+	 */
+	Dormitory queryDormitoryById(Integer id);
+	
 }
