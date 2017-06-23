@@ -65,6 +65,7 @@ public class Student {
      * 学生所在的宿舍ID号
      */
     private int dormitoryId;
+    
     public int getDormitoryId() {
 		return dormitoryId;
 	}
