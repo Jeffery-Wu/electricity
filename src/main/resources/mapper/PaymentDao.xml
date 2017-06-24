@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="om.huangting.electricity.dao.PaymentDao">
+<insert id="add" parameterType="Payment">
+     insert ignore into 
+     payment
+     values(null,#{dormitoryId},#{price},#{batteryCount},#{studentId})
+   </insert>   
+  
+     <select id="queryById" parameterType="Long">
+    select * 
+    from
+    payment
+    where id=#{payment.id}
+   </select>
+   
+   <update id="updatePayment" parameterType="Payment">
+      update 
+      payment
+      set 
+        <set >  
+      <if test="dormitoryId != null" >  
+        payment.dormitoryId = #{payment.dormitoryId},  
+      </if>  
+      <if test="price != null" >  
+        payment.price = #{payment.price},  
+      </if>  
+      <if test="batteryCount != null" >  
+        payment.batteryCount = #{payment.batteryCount},  
+      </if>         
+      <if test="studentId != null" >  
+        payment.studentId = #{payment.studentId},  
+      </if>  
+    </set>  
+    where id = #{payment.id} 
+   </update>
+</mapper>

@@ -2,6 +2,7 @@ package com.huangting.electricity.dao;
 
 import com.huangting.electricity.entity.Student;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -9,6 +10,7 @@ import java.util.List;
  * Created by huangting on 2017/6/20.
  */
 @Mapper
+@Component
 public interface StudentDao {
 
     /**

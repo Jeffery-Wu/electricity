@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="om.huangting.electricity.dao.NoticeDao">
+<insert id="add" parameterType="Notice">
+     insert ignore into 
+     notice
+     values(null,null,null,#{title},#{content},#{mangerId})
+   </insert>   
+   
+   <select id="queryAll" parameterType="Integer" resultType="Notice">
+    select * 
+    from
+    notice 
+    where  limit #{offset} #{limit}
+   </select>
+   
+   <select id="queryByIdWithContent" parameterType="Long">
+   select * from notice where id=#{notice.id}
+   </select>
+   
+   <select id="queryNoticeByMnagerId" parameterType="Integer">
+   select * from notice where managerId=#{notice.managerId}
+   </select>
+</mapper>
