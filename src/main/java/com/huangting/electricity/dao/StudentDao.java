@@ -47,5 +47,12 @@ public interface StudentDao {
      * @return
      */
     Student queryStudentById(Long id);
+    
+    /**
+     * 根据学生学号查询学生信息
+     * @param id
+     * @return
+     */
+    Student queryStudentByStudentId(String id);
 
 }

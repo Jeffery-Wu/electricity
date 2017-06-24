@@ -13,7 +13,7 @@ public class Dormitory {
     /**
      * 宿舍的编号
      */
-    private String name;
+    private String dormitoryId;
 
     /**
      * 宿舍的楼号
@@ -43,12 +43,12 @@ public class Dormitory {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getDormitoryId() {
+        return dormitoryId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDormitoryId(String dormitoryId) {
+        this.dormitoryId = dormitoryId;
     }
 
     public String getBuild() {
@@ -87,7 +87,7 @@ public class Dormitory {
     public String toString() {
         return "Dormitory{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", dormitoryId='" + dormitoryId + '\'' +
                 ", build='" + build + '\'' +
                 ", floor='" + floor + '\'' +
                 ", room='" + room + '\'' +

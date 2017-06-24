@@ -10,6 +10,11 @@ public interface StudentService {
 
     /**
      * 下订单
+     * 
+     * 1.判断参数是否完整
+     * 2.存入数据库
+     * 3.存储失败——超时重新下订单/联系工作人员
+     * 4.存储成功返回
      * @param payment
      * @return
      */
@@ -17,6 +22,8 @@ public interface StudentService {
 
     /**
      * 根据订单购电
+     * 1.修改对应数据库
+     * 2.修改失败——联系工作人员
      * @param payment
      * @return
      */

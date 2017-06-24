@@ -45,4 +45,11 @@ public interface ManagerDao {
      * @return
      */
     Manager queryManagerById(Integer id);
+    
+    /**
+     * 根据管理员的name查询管理员信息
+     * @param name
+     * @return
+     */
+    Manager queryManagerByName(String name);
 }
