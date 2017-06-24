@@ -12,4 +12,18 @@ public interface ElectricitySituationDao {
      * @return
      */
     Integer addElectricitySituation(ElectricitySituation electricitySituation);
+    
+    /**
+     * 根据id查找
+     * @param id
+     * @return
+     */
+    ElectricitySituation queryElectricitySituationById(Integer id);
+    
+    /**
+     * 根据宿舍编号查找
+     * @param dormitoryId
+     * @return
+     */
+    ElectricitySituation queryElectricitySituationByDormitoryId(String dormitoryId);
 }

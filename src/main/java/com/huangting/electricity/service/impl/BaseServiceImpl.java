@@ -21,6 +21,7 @@ public class BaseServiceImpl implements BaseService {
 	private StudentDao studentDao;
 	private ManagerDao managerDao;
 
+	@SuppressWarnings("rawtypes")
 	@Override
     public Result<String> login(Class<?> memberType, Object object) {
     	Result result = null;
@@ -28,20 +29,20 @@ public class BaseServiceImpl implements BaseService {
 			Student studentLogin = (Student)object;
 			Manager managerLogin = (Manager)object;
 			/*
-			 * empty
+			 * 判断是否为空
 			 */
     		if(studentLogin.getStudentID().equals(null)||managerLogin.getName().equals(null)) {
     			result = new Result<String>(false, "账号为空", null);
     		}
 			/*
-			 * exist
+			 * 判断是否存在
 			 */
 			if(studentDao.queryStudentByStudentId(studentLogin.getStudentID()) == null || 
 					managerDao.queryManagerByName(managerLogin.getName()) == null){
 				result = new Result<String>(false, "该用户不存在", null);
 			}
 			/*
-			 * correct password
+			 * 判断密码是否正确
 			 */
 			if(memberType == Student.class) {
 				if(studentLogin.getPassword().equals(studentDao.queryStudentById(studentLogin.getId()).getPassword())) {
