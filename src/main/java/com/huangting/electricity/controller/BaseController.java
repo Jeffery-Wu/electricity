@@ -21,13 +21,12 @@ import javax.annotation.Resource;
  * Created by huangting on 2017/6/24.
  */
 @Controller
-@RequestMapping("/login")
 public class BaseController {
 
     @Resource
     private BaseService baseService;
 
-    @RequestMapping(name = "/", method = RequestMethod.POST)
+    @RequestMapping(name = "/login", method = RequestMethod.POST)
     @ResponseBody
     @ApiOperation(value = "登录", httpMethod = "POST", response = JSONObject.class, notes = "系统成员的统一登录入口")
     public JSONObject login(
@@ -53,5 +52,25 @@ public class BaseController {
             return json;
         }
 
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String index() {
+        return "/loginAndRegister";
+    }
+
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public String home() {
+        return "/home";
+    }
+
+    @RequestMapping(value = "/dataTable", method = RequestMethod.GET)
+    public String dataTable() {
+        return "/dataTable";
+    }
+
+    @RequestMapping(value = "/addStudent", method = RequestMethod.GET)
+    public String addStudent() {
+        return "/addStudent";
     }
 }
