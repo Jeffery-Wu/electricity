@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="om.huangting.electricity.dao.ElectricityAccountDao">
+<mapper namespace="com.huangting.electricity.dao.ElectricityAccountDao">
 <insert id="add" parameterType="ElectricityAccount">
      insert ignore into 
      electricity_account
@@ -12,18 +12,21 @@
    <update id="updateElectricityAccount" parameterType="ElectricityAccount">
       update 
       electricity_account
-      set 
         <set >  
-      <if test="dormitoryId != null" >  
-        electricity_account.dormitoryId = #{electricity_account.dormitoryId},  
+      <if test="electricityAccount.dormitoryId != null" >
+        dormitoryId = #{electricityAccount.dormitoryId},
       </if>  
-      <if test="balance != null" >  
-        electricity_account.balance = #{electricity_account.balance},  
+      <if test="electricityAccount.balance != null" >
+        balance = #{electricityAccount.balance},
       </if>  
-      <if test="remainingBattery != null" >  
-        electricity_account.remainingBattery = #{electricity_account.remainingBattery},  
+      <if test="electricityAccount.remainingBattery != null" >
+        remainingBattery = #{electricityAccount.remainingBattery},
       </if>  
     </set>  
-    where id = #{electricity_account.id} 
+    where id = #{electricityAccount.id}
    </update>
+
+    <select id="queryElectricityAccountByDormitoryId" parameterType="Integer" resultType="ElectricityAccount">
+        SELECT * from electricity_account where dormitoryId=#{id}
+    </select>
 </mapper>

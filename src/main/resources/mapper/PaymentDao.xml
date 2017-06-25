@@ -2,37 +2,39 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="om.huangting.electricity.dao.PaymentDao">
-<insert id="add" parameterType="Payment">
+<mapper namespace="com.huangting.electricity.dao.PaymentDao">
+<insert id="addPayment" parameterType="Payment">
      insert ignore into 
      payment
-     values(null,#{dormitoryId},#{price},#{batteryCount},#{studentId})
+     values(null,#{payment.dormitoryId},#{payment.paymentCount},#{payment.price},#{payment.batteryCount},#{payment.studentId},null)
    </insert>   
   
-     <select id="queryById" parameterType="Long">
+     <select id="queryById" parameterType="Long" resultType="Payment">
     select * 
     from
     payment
-    where id=#{payment.id}
+    where id=#{id}
    </select>
    
    <update id="updatePayment" parameterType="Payment">
       update 
       payment
-      set 
         <set >  
-      <if test="dormitoryId != null" >  
-        payment.dormitoryId = #{payment.dormitoryId},  
+      <if test="payment.dormitoryId != null" >
+        dormitoryId = #{payment.dormitoryId},
       </if>  
-      <if test="price != null" >  
-        payment.price = #{payment.price},  
+      <if test="payment.price != null" >
+        price = #{payment.price},
       </if>  
-      <if test="batteryCount != null" >  
-        payment.batteryCount = #{payment.batteryCount},  
+      <if test="payment.batteryCount != null" >
+        batteryCount = #{payment.batteryCount},
       </if>         
-      <if test="studentId != null" >  
-        payment.studentId = #{payment.studentId},  
-      </if>  
+      <if test="payment.studentId != null" >
+        studentId = #{payment.studentId},
+      </if>
+      <if test="payment.paymentCount != null">
+          paymentCount = #{payment.paymentCount}
+      </if>
     </set>  
     where id = #{payment.id} 
    </update>

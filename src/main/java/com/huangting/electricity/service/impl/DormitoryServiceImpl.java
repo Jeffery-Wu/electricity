@@ -23,19 +23,19 @@ public class DormitoryServiceImpl implements DormitoryService{
 		// TODO Auto-generated method stub
 		Dormitory dormitory = null;
 		Result result = null;
-		try {
-			if(studentId.equals(null)){
-				result = new Result<Dormitory>(false, "学生Id不可为空", null);
-			} else if(dormitoryDao.queryDormitoryByStudentId(studentId) == null){
-				result = new Result<Dormitory>(false, "不存在该学生用户", null);
-			} else {
-				dormitory = dormitoryDao.queryDormitoryByStudentId(studentId);
-				result = new Result<Dormitory>(true, "成功", dormitory);
-			}
-			
-		} catch (Exception e) {
-			result = new Result<Dormitory>(false, "系统出现异常", null);
-		}
+//		try {
+//			if(studentId.equals(null)){
+//				result = new Result<Dormitory>(false, "学生Id不可为空", null);
+//			} else if(dormitoryDao.queryDormitoryByStudentId(studentId) == null){
+//				result = new Result<Dormitory>(false, "不存在该学生用户", null);
+//			} else {
+//				dormitory = dormitoryDao.queryDormitoryByStudentId(studentId);
+//				result = new Result<Dormitory>(true, "成功", dormitory);
+//			}
+//
+//		} catch (Exception e) {
+//			result = new Result<Dormitory>(false, "系统出现异常", null);
+//		}
 		return result;
 	}
 

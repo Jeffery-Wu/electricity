@@ -35,7 +35,7 @@ public class Student {
     /**
      * 学生的性别
      */
-    private String Sex;
+    private String sex;
 
     /**
      * 学生的手机号
@@ -115,11 +115,11 @@ public class Student {
     }
 
     public String getSex() {
-        return Sex;
+        return sex;
     }
 
     public void setSex(String sex) {
-        Sex = sex;
+        sex = sex;
     }
 
     public String getMobilePhone() {
@@ -169,7 +169,7 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", className='" + className + '\'' +
                 ", department='" + department + '\'' +
-                ", Sex='" + Sex + '\'' +
+                ", sex='" + sex + '\'' +
                 ", mobilePhone='" + mobilePhone + '\'' +
                 ", mail='" + mail + '\'' +
                 ", password='" + password + '\'' +

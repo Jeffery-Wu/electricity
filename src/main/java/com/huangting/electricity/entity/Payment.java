@@ -9,47 +9,61 @@ public class Payment {
 	/**
 	 * 订单ID
 	 */
-	private Integer id;
+	private Long id;
 	
 	/**
 	 * 宿舍编号
 	 */
-	private Integer dormitaryId;
+	private Integer dormitoryId;
 	
 	/**
 	 * 充值金额
 	 */
 	private double paymentCount;
-	
-	/**
-	 * 订单创建时间
-	 */
-	private Date bornTimeDate;
+
 	
 	/**
 	 * 学生Id
 	 */
-	private String studentId;
-	
-	/**
-	 * 密码
-	 */
-	private String password;
+	private Integer studentId;
 
-	public Integer getId() {
+
+	/**
+	 * 充值电量
+	 */
+	private Double batteryCount;
+
+	/**
+	 * 充值单价
+	 */
+	private Double price;
+
+	/**
+	 * 订单创建的时间
+	 */
+	private Date bornTime;
+
+	public Double getBatteryCount() { return batteryCount; }
+
+	public void setBatteryCount(Double batteryCount) { this.batteryCount = batteryCount; }
+	public Double getPrice() { return price; }
+
+	public void setPrice(Double price) { this.price = price; }
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public Integer getDormitaryId() {
-		return dormitaryId;
+	public Integer getDormitoryId() {
+		return dormitoryId;
 	}
 
-	public void setDormitaryId(Integer dormitaryId) {
-		this.dormitaryId = dormitaryId;
+	public void setDormitoryId(Integer dormitaryId) {
+		this.dormitoryId = dormitaryId;
 	}
 
 	public double getPaymentCount() {
@@ -60,27 +74,28 @@ public class Payment {
 		this.paymentCount = paymentCount;
 	}
 
-	public Date getBornTimeDate() {
-		return bornTimeDate;
-	}
-
-	public void setBornTimeDate(Date bornTimeDate) {
-		this.bornTimeDate = bornTimeDate;
-	}
-
-	public String getStudentId() {
+	public Integer getStudentId() {
 		return studentId;
 	}
 
-	public void setStudentId(String studentId) {
+	public void setStudentId(Integer studentId) {
 		this.studentId = studentId;
 	}
 
-	public String getPassword() {
-		return password;
-	}
+	public Date getBornTime() { return bornTime; }
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setBornTime(Date bornTime) { this.bornTime = bornTime; }
+
+	@Override
+	public String toString() {
+		return "Payment{" +
+				"id=" + id +
+				", dormitoryId=" + dormitoryId +
+				", paymentCount=" + paymentCount +
+				", studentId=" + studentId +
+				", batteryCount=" + batteryCount +
+				", price=" + price +
+				", bornTime=" + bornTime +
+				'}';
 	}
 }

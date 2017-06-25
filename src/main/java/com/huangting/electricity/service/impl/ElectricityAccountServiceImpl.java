@@ -28,19 +28,19 @@ public class ElectricityAccountServiceImpl implements ElectricityAccountService 
 		// TODO Auto-generated method stub
 		ElectricityAccount electricityAccount = null;
 		Result result = null;
-		try {
-			if(dormitoryId.equals(null)){
-				result = new Result<ElectricityAccount>(false, "寝室编码不可为空", null);
-			} else if(electricityAccountDao.queryElectricityAccountByDormitoryId(dormitoryId) == null){
-				result = new Result<ElectricityAccount>(false, "对应记录不存在", null);
-			} else {
-				electricityAccount = electricityAccountDao.queryElectricityAccountByDormitoryId(dormitoryId);
-				result = new Result<ElectricityAccount>(true, "成功", electricityAccount);
-			}
-			
-		} catch (Exception e) {
-			result = new Result<ElectricityAccount>(false, "系统出现异常", null);
-		}
+//		try {
+//			if(dormitoryId.equals(null)){
+//				result = new Result<ElectricityAccount>(false, "寝室编码不可为空", null);
+//			} else if(electricityAccountDao.queryElectricityAccountByDormitoryId(dormitoryId) == null){
+//				result = new Result<ElectricityAccount>(false, "对应记录不存在", null);
+//			} else {
+//				electricityAccount = electricityAccountDao.queryElectricityAccountByDormitoryId(dormitoryId);
+//				result = new Result<ElectricityAccount>(true, "成功", electricityAccount);
+//			}
+//
+//		} catch (Exception e) {
+//			result = new Result<ElectricityAccount>(false, "系统出现异常", null);
+//		}
 		return result;
 	}
 

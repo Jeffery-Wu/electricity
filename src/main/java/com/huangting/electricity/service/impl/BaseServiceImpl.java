@@ -19,46 +19,47 @@ public class BaseServiceImpl implements BaseService {
 
 	@Resource
 	private StudentDao studentDao;
+	@Resource
 	private ManagerDao managerDao;
 
-	@SuppressWarnings("rawtypes")
 	@Override
     public Result<String> login(Class<?> memberType, Object object) {
     	Result result = null;
     	try {
-			Student studentLogin = (Student)object;
-			Manager managerLogin = (Manager)object;
-			/*
-			 * 判断是否为空
-			 */
-    		if(studentLogin.getStudentID().equals(null)||managerLogin.getName().equals(null)) {
-    			result = new Result<String>(false, "账号为空", null);
-    		}
-			/*
-			 * 判断是否存在
-			 */
-			if(studentDao.queryStudentByStudentId(studentLogin.getStudentID()) == null || 
-					managerDao.queryManagerByName(managerLogin.getName()) == null){
-				result = new Result<String>(false, "该用户不存在", null);
-			}
-			/*
-			 * 判断密码是否正确
-			 */
-			if(memberType == Student.class) {
-				if(studentLogin.getPassword().equals(studentDao.queryStudentById(studentLogin.getId()).getPassword())) {
-					result = new Result<String>(true, "登陆成功", null);
+			if (memberType == Student.class) {
+				Student student = (Student)object;
+System.out.println(student);
+				Student student1 = studentDao.queryStudentByStudentId(student.getStudentID());
+System.out.println(student1);
+				if (student1 == null) {
+					result = new Result<String>(false,"该账户不存在",null);
 				} else {
-					result = new Result<String>(false, "密码错误", null);
+					if (student1.getPassword().equals(student.getPassword())) {
+						result = new Result<String>(true, "登录成功",null);
+					} else {
+						result = new Result<String>(false, "密码错误", null);
+					}
 				}
-			} else if (memberType == Manager.class){
-				if(managerLogin.getPassword().equals(managerDao.queryManagerById(managerLogin.getId()).getPassword())) {
-					result = new Result<String>(true, "登陆成功", null);
+			} else if (memberType == Manager.class) {
+				Manager manager = (Manager)object;
+System.out.println(manager);
+				Manager manager1 = managerDao.queryManagerByName(manager.getName());
+				if (manager1 == null) {
+					result = new Result<String>(false,"该账户不存在",null);
 				} else {
-					result = new Result<String>(false, "密码错误", null);
+					if (manager1.getPassword().equals(manager.getPassword())) {
+						result = new Result<String>(true, "登录成功", null);
+					} else {
+						result = new Result<String>(false, "密码错误", null);
+					}
 				}
+			} else {
+				result = new Result<String>(false,"系统出现异常",null);
+				System.out.print("aaaa");
 			}
 		} catch (Exception e) {
 			result = new Result<String>(false, "系统出现异常", null);
+			e.printStackTrace();
 		}
     	return result;
     }

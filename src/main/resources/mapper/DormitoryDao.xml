@@ -2,6 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="om.huangting.electricity.dao.DormitoryDao">
-
+<mapper namespace="com.huangting.electricity.dao.DormitoryDao">
+    <select id="queryDormitoryById" parameterType="Integer" resultType="Dormitory">
+        SELECT * FROM dormitory WHERE id = #{id}
+    </select>
 </mapper>

@@ -32,6 +32,11 @@ public class ElectricityAccount {
      */
     private Double remainingBattery;
 
+    /**
+     * 宿舍的ID号
+     */
+    private Integer dormitoryId;
+
     public Integer getId() {
         return id;
     }
@@ -70,6 +75,12 @@ public class ElectricityAccount {
 
     public void setRemainingBattery(Double remainingBattery) {
         this.remainingBattery = remainingBattery;
+    }
+
+    public Integer getDormitoryId() { return dormitoryId; }
+
+    public void setDormitoryId(Integer dormitoryId) {
+        this.dormitoryId = dormitoryId;
     }
 
     @Override

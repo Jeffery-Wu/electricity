@@ -19,7 +19,7 @@ public interface PaymentService {
      * @param id
      * @return
      */
-	Result<Payment> queryById(Integer id);
+	Result<Payment> queryById(Long id);
 
     /**
      * 修改订单的信息
@@ -27,6 +27,11 @@ public interface PaymentService {
      * @return
      */
 	Result<Integer> updatePayment(Payment payment);
-	
+
+	/**
+	 * 取消订单
+	 * @param id
+	 * @return
+	 */
 	Result<Integer> deletePayment(Integer id);
 }
