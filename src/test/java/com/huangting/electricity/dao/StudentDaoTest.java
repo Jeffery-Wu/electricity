@@ -2,6 +2,7 @@ package com.huangting.electricity.dao;
 
 import javax.annotation.Resource;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -40,6 +41,7 @@ public class StudentDaoTest {
     }
 
     @Test
+    @Ignore
     public void queryStudentByStudentId() throws Exception {
         Student student = studentDao.queryStudentByStudentId("2014213451");
 System.out.println(student);
@@ -63,6 +65,7 @@ System.out.println(student);
     }
 
     @Test
+    @Ignore
     public void queryStudentById() throws Exception {
         Student student = studentDao.queryStudentById(1L);
         System.out.println(student);

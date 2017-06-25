@@ -2,6 +2,7 @@ package com.huangting.electricity.dao;
 
 import javax.annotation.Resource;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.huangting.electricity.entity.Dormitory;
@@ -21,6 +22,7 @@ public class DormitoryDaoTest {
     }
 
     @Test
+    @Ignore
     public void queryDormitoryById() throws Exception {
         Dormitory dormitory = dormitoryDao.queryDormitoryById(1);
         System.out.print(dormitory);
