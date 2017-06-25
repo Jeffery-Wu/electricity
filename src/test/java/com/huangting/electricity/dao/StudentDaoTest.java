@@ -1,17 +1,14 @@
 package com.huangting.electricity.dao;
 
-import com.ElectricityApplication;
-import com.huangting.electricity.entity.Student;
+import javax.annotation.Resource;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import javax.annotation.Resource;
-
-import static org.junit.Assert.*;
+import com.huangting.electricity.entity.Student;
 
 /**
  * Created by huangting on 2017/6/24.
@@ -45,7 +42,7 @@ public class StudentDaoTest {
     @Test
     public void queryStudentByStudentId() throws Exception {
         Student student = studentDao.queryStudentByStudentId("2014213451");
-
+System.out.println(student);
     }
 
     @Test

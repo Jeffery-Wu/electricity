@@ -1,21 +1,21 @@
 package com.huangting.electricity.controller;
 
-import com.alibaba.fastjson.JSONObject;
-import com.huangting.electricity.dto.Result;
-import com.huangting.electricity.dto.StudentAndManagerLogin;
-import com.huangting.electricity.entity.Manager;
-import com.huangting.electricity.entity.Student;
-import com.huangting.electricity.service.BaseService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.annotation.Resource;
+import com.alibaba.fastjson.JSONObject;
+import com.huangting.electricity.dto.Result;
+import com.huangting.electricity.dto.StudentAndManagerLogin;
+import com.huangting.electricity.entity.Manager;
+import com.huangting.electricity.entity.Student;
+import com.huangting.electricity.service.BaseService;
+
+import io.swagger.annotations.ApiOperation;
 
 /**
  * Created by huangting on 2017/6/24.
@@ -54,22 +54,22 @@ public class BaseController {
 
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/")
     public String index() {
         return "/loginAndRegister";
     }
 
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    @RequestMapping(value = "/home")
     public String home() {
         return "/home";
     }
 
-    @RequestMapping(value = "/dataTable", method = RequestMethod.GET)
+    @RequestMapping(value = "/dataTable")
     public String dataTable() {
         return "/dataTable";
     }
 
-    @RequestMapping(value = "/addStudent", method = RequestMethod.GET)
+    @RequestMapping(value = "/addStudent")
     public String addStudent() {
         return "/addStudent";
     }

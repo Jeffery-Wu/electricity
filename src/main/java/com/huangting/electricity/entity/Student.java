@@ -119,7 +119,7 @@ public class Student {
     }
 
     public void setSex(String sex) {
-        sex = sex;
+        this.sex = sex;
     }
 
     public String getMobilePhone() {

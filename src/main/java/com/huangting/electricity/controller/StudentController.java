@@ -1,17 +1,21 @@
 package com.huangting.electricity.controller;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import com.alibaba.fastjson.JSONObject;
-import com.huangting.electricity.dao.StudentDao;
 import com.huangting.electricity.dto.Result;
 import com.huangting.electricity.entity.Student;
-import com.huangting.electricity.service.BaseService;
 import com.huangting.electricity.service.StudentService;
+
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.Resource;
 
 /**
  * Created by huangting on 2017/6/21.

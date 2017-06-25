@@ -1,7 +1,6 @@
 package com.huangting.electricity.entity;
 
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by huangting on 2017/6/22.

@@ -1,15 +1,15 @@
 package com.huangting.electricity.service.impl;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
 import com.huangting.electricity.dao.ManagerDao;
 import com.huangting.electricity.dao.StudentDao;
 import com.huangting.electricity.dto.Result;
 import com.huangting.electricity.entity.Manager;
 import com.huangting.electricity.entity.Student;
 import com.huangting.electricity.service.BaseService;
-
-import javax.annotation.Resource;
-
-import org.springframework.stereotype.Service;
 
 /**
  * Created by huangting on 2017/6/20.
@@ -24,7 +24,7 @@ public class BaseServiceImpl implements BaseService {
 
 	@Override
     public Result<String> login(Class<?> memberType, Object object) {
-    	Result result = null;
+    	Result<String> result = null;
     	try {
 			if (memberType == Student.class) {
 				Student student = (Student)object;

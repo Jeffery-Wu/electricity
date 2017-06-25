@@ -20,10 +20,6 @@ spring:
         testOnReturn: false
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
-    freemarker:
-      cache: false
-    mvc:
-      static-path-pattern: classpath:/static
 mybatis:
     typeAliasesPackage: com.huangting.electricity.entity
     mapUnderscoreToCamelCase: true

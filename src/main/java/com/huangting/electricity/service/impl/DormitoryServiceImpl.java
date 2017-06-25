@@ -64,7 +64,7 @@ public class DormitoryServiceImpl implements DormitoryService{
 	public Result<Dormitory> queryDormitoryById(Integer id) {
 		// TODO Auto-generated method stub
 		Dormitory dormitory = null;
-		Result result = null;
+		Result<Dormitory> result = null;
 		try {
 			if(id == 0){
 				result = new Result<Dormitory>(false, "寝室Id不可为空", null);

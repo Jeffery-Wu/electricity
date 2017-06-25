@@ -1,10 +1,7 @@
 package com.huangting.electricity.service;
 
-import java.util.List;
-
 import com.huangting.electricity.dto.Result;
 import com.huangting.electricity.entity.ElectricitySituation;
-import com.huangting.electricity.entity.Manager;
 
 /**
  * Created by huangting on 2017/6/22.

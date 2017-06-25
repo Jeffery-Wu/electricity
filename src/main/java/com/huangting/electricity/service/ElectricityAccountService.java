@@ -2,7 +2,6 @@ package com.huangting.electricity.service;
 
 import com.huangting.electricity.dto.Result;
 import com.huangting.electricity.entity.ElectricityAccount;
-import com.huangting.electricity.entity.ElectricitySituation;
 
 /**
  * Created by huangting on 2017/6/22.

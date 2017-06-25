@@ -1,11 +1,10 @@
 package com.huangting.electricity.dao;
 
-import com.huangting.electricity.entity.Dormitory;
-import org.junit.Test;
-
 import javax.annotation.Resource;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
+
+import com.huangting.electricity.entity.Dormitory;
 
 /**
  * Created by huangting on 2017/6/24.
