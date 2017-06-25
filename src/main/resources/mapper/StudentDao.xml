@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huangting.electricity.dao.StudentDao">
+   <insert id="add" parameterType="Student">
+     insert ignore into 
+     student
+     values(null,#{student.name},#{student.studentID},#{student.className},#{student.department},
+     #{student.sex},#{student.mobilePhone},#{student.mail},#{student.password},null,null,
+     #{student.dormitoryId} )
+   </insert>   
+  
+   <delete id="deleteById" parameterType="Long">
+      delete from 
+      student
+      where studentID=#{student.studentID}
+   </delete>
+  
+   <update id="updateStudent" parameterType="Student">
+      update 
+      student
+        <set >  
+      <if test="student.name != null" >
+        name = #{student.name},
+      </if>  
+      <if test="student.studentID != null" >
+        studentID = #{student.studentID},
+      </if>  
+      <if test="student.className != null" >
+        className = #{student.className},
+      </if>  
+      <if test="student.department != null" >
+        department = #{student.department},
+      </if>  
+      <if test="student.sex != null" >
+        sex = #{student.sex},
+      </if>  
+      <if test="student.mobilePhone != null" >  
+        mobilePhone = #{student.mobilePhone},
+      </if>  
+      <if test="student.mail != null" >  
+        mail = #{student.mail},
+      </if>  
+      <if test="student.password!= null" >  
+        password = #{student.password},
+      </if>  
+      <if test="student.dormitoryId!= null" >  
+        dormitoryId = #{student.dormitoryId},
+      </if>       
+    </set>  
+    where id = #{student.id}
+   </update>
+   
+   <select id="queryStudentByDormitoryId" parameterType="Integer" resultType="Student">
+    select * 
+    from
+    student 
+    where dormitoryId=#{student.dormitoryId}
+   </select>
+   
+   <select id="queryStudentById" parameterType="Long" resultType="Student">
+   select * from student where id=#{id}
+   </select>
+
+    <select id="queryStudentByStudentId" parameterType="String" resultType="Student">
+        select * from student where studentID=#{id}
+    </select>
+</mapper>
+
+
+
+
